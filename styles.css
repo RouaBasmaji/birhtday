@@ -1,0 +1,126 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #000000, #000000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px; /* قلل padding للتكيف مع الشاشات الصغيرة */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: #f6f06f;
+    font-size: 2em; /* قلل حجم الخط للتكيف مع الشاشات الصغيرة */
+    animation: glow 1.5s infinite;
+}
+
+p {
+    font-size: 1em; /* قلل حجم الخط للتكيف مع الشاشات الصغيرة */
+    margin: 10px 0;
+}
+
+.flower {
+    width: 80px; /* قلل الحجم للتكيف مع الشاشات الصغيرة */
+    height: 80px;
+    margin: 10px auto; /* قلل المسافة حول الصورة */
+    background: url('flower.png') no-repeat center center;
+    background-size: cover;
+    animation: spin 10s linear infinite;
+}
+
+.photo {
+    margin: 10px auto; /* قلل المسافة حول الصورة */
+}
+
+.photo img {
+    width: 200px; /* قلل حجم الصورة للتكيف مع الشاشات الصغيرة */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+    font-style: italic;
+    color: #f5f5f5;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #ffeb3b; }
+    50% { text-shadow: 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #ffeb3b, 0 0 50px #ffeb3b; }
+    100% { text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 30px #ffeb3b, 0 0 40px #ffeb3b; }
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: -1;
+}
+
+.flower-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.flower {
+    position: absolute;
+    width: 20px; /* قلل حجم الزهور للتكيف مع الشاشات الصغيرة */
+    height: 20px;
+    background-image: url('flower.png');
+    background-size: cover;
+    animation: fly 10s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-1000px) scale(0.5);
+    }
+}
+
+/* استعلام الوسائط لتحسين العرض على الشاشات الصغيرة */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* قلل padding للتكيف مع الشاشات الصغيرة */
+    }
+
+    h1 {
+        font-size: 1.5em; /* قلل حجم الخط على الشاشات الصغيرة */
+    }
+
+    p {
+        font-size: 0.9em; /* قلل حجم الخط على الشاشات الصغيرة */
+    }
+
+    .photo img {
+        width: 150px; /* قلل حجم الصورة على الشاشات الصغيرة */
+    }
+
+    .flower {
+        width: 40px; /* قلل حجم الزهور على الشاشات الصغيرة */
+        height: 40px;
+    }
+}
